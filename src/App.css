@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+
 }
 
 .App-logo {
@@ -27,7 +32,242 @@
 .App-link {
   color: #61dafb;
 }
+.header {
+  background-color: rgba(0,0,0,.15);
+  box-sizing: border-box;
+  display: flex;
+  max-height: 40px;
+  overflow-y: hidden;
+  padding: 4px;
+  justify-content: center;
+  width: 100%;
+}
+.header a {
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+  height: 30px;
+  margin-top: 1px;
+  text-align: center;
+  text-decoration: none !important;
+}
+.header img {
+  height: 30px;
+}
+.board {
+  background-color: #0079be;
+  padding: 0 ;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: scroll;
+  width: 100%;
+}
+.contentContainer {
+  padding: 8px 4px 4px 8px;
+  padding: 8px 4px 4px 8px;
+    user-select: none;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    position: absolute;
+    overflow-x: hidden;
+    width: max-content;
+}
 
+.list {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  margin: 0 4px;
+}
+
+.listContainer {
+  width: 275px;
+  background-color: #ebecf0;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+  padding: 0 4px 8px;
+}
+
+.listHeader {
+  flex: 0 0 auto;
+  padding: 10px 8px;
+  position: relative;
+  min-height: 20px;
+  text-align: start;
+  box-sizing: border-box;
+  display: flex;
+    
+}
+.listTitle {
+  background: transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  font-weight: 600;
+  margin: -4px 0;
+  min-height: 20px;
+  padding: 4px 8px;
+  resize: none;
+  max-height: 256px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  height: 28px;
+  resize: none;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  line-height: 20px;
+  transition-property: background-color,border-color,box-shadow;
+  transition-duration: 85ms;
+  transition-timing-function: ease;
+  width: 100%;
+}
+.listFooter {
+  /* min-height: 38px;
+  max-height: 38px; */
+  display: flex;
+  justify-content: space-between;
+}
+.addCard {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  padding: 0px 8px;
+}
+.deleteCard {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  float: right;
+}
+.cardsContainer {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 4px;
+  padding: 0 4px;
+  z-index: 1;
+  min-height: 0;
+}
+.card {
+  /* width:90%; */
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgb(9 30 66 / 25%);
+  cursor: pointer;
+  display: block;
+  margin-bottom: 8px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  text-decoration: none;
+  z-index: 0;
+}
+
+.cardDetails {
+  overflow: hidden;
+  padding: 6px 8px 2px;
+  position: relative;
+  z-index: 10;
+}
+.cardTitle {
+  clear: both;
+  display: block;
+  margin: 0 0 4px;
+  overflow: hidden;
+  text-decoration: none;
+  word-wrap: break-word;
+  color: #172b4d;
+  text-align: start;
+}
+.cardId, .listId {
+  display: none;
+}
+.cardInputContainer {
+  width: 100%;
+  min-height: 20px;
+}
+.cardInputContainer input{
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 6px 8px 2px;
+}
+.cardInputContainer button{
+  float: left;
+  /* margin-bottom: 8px; */
+  background-color: #5aac44;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  padding: 6px 12px;
+}
+.addListContainer {
+  box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    margin: 0 4px;
+    
+    
+}
+.addList {
+  width: 275px;
+  background-color: hsla(0,0%,100%,.24);
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+  padding: 10px 8px;
+  color: white;
+  border: none;
+  font-weight: 600;
+  line-height: 20px;
+
+}
+.deleteList {
+  display: inline-block;
+  min-height: 20px;
+  margin-top: auto;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  float: right;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
