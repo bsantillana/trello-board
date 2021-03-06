@@ -7,6 +7,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { v4 as uuidv4 } from 'uuid';
 
 
+
 class Board extends React.Component  {
     constructor(props) {
         super(props);

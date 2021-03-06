@@ -1,10 +1,8 @@
 import React from 'react';
-import { Draggable } from 'react-beautiful-dnd'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from './Card'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faTimes  } from '@fortawesome/free-solid-svg-icons'
 import { v4 as uuidv4 } from 'uuid'
 
 
