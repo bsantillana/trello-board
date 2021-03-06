@@ -2,7 +2,9 @@ import * as React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import List from './List';
 import Header from './Header'
-import Sidebar from './Sidebar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { v4 as uuidv4 } from 'uuid';
 
 
 class Board extends React.Component  {
@@ -22,12 +24,13 @@ class Board extends React.Component  {
     addList() {
         this.setState(state => ({
             listArray: state.listArray.concat({ 
-                listID: state.listArray.length + 1, 
-                listTitle: state.listTitle})
-        }))
-        this.setState({
-            listTitle: '' // to reset the input field
-        });
+                listID: uuidv4(), 
+                listTitle: state.listTitle
+            }),
+            listTitle: '', // to reset the input field
+            showListForm: false,
+            showAddList: true
+        }));
     }
 
     showListForm = () => {
@@ -43,7 +46,7 @@ class Board extends React.Component  {
         // pass in ID, remove list from listArray
         this.setState(state => {
             const listArray = state.listArray.filter(list => list.listID !== listID);
-            // loop through array of lists, reset listID to iterator index
+            console.log(`listArray: ${JSON.stringify(listArray)}`);
             return {
                 listArray
             };
@@ -51,22 +54,20 @@ class Board extends React.Component  {
     }
 
     render() {
-        
         return (
         <div className="board"> 
-
-        <Header />
-
-        <div className="contentContainer">
-          
+            <Header />
+            <div className="contentContainer">
             {
                 this.state.listArray.map(list => (
                     <List key={list.listID} listID={list.listID} listTitle={list.listTitle} removeList={this.removeList} />
                 ))
             }
             <div className="addListContainer">
-            {this.state.showAddList ? 
-                <button className="addList" onClick={this.showListForm}>Add another list</button>
+                {this.state.showAddList ? 
+                <button className="addList" onClick={this.showListForm}>
+                    <span className="icon"><FontAwesomeIcon icon={faPlus}/></span>
+                    <span className="buttonText">{'\u00A0'} Add another list</span></button>
                 :null}
                 {this.state.showListForm ? 
                     <div className="cardInputContainer"> 
@@ -74,9 +75,8 @@ class Board extends React.Component  {
                         <button onClick={this.addList}>Add List</button>
                     </div>
                 : null}
+                </div>
             </div>
-
-        </div>
         </div>
         );
     }

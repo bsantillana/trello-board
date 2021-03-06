@@ -1,5 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import trelloIcon from '../trello-icon.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquare, faSearch, faStickyNote,faEllipsisH, faRobot, faRocket, faLock, faListUl, faPlusSquare, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 function Sidebar(props) {
 
@@ -8,44 +11,53 @@ function Sidebar(props) {
         <div className="sidebarContainer">
             <div className="sidebarHeader">
                 <h3>Menu
-                    <button className="exitSidebar" onClick={props.setSidebarInvisibile}>X</button>
+                    <button className="exitSidebar" onClick={props.setSidebarInvisibile}>
+                        <span><FontAwesomeIcon icon={faTimes}/></span>
+                    </button>
                 </h3>
                 <hr></hr>
             </div>
             <div className="sidebarContent">
                 <ul>
                     <li>
-                        <a href="/">
-                            About this board
-                            <br></br>
-                            <span className="itemSubtext">
-                                Add a description to your board
-                            </span>
-                        </a >
+                    <a href="/">
+                    <span className="sidebarIcon"><img src={trelloIcon} height="20px"></img></span>
+                        {'\u00A0'} About this board
+                        <br></br>
+                        <div className="itemSubtext">
+                            {'\u00A0'} Add a description to your board
+                        </div>
+                    </a>
                     </li>
                     <li>
                         <a href="/">
-                            Change Background
+                            <span className="sidebarIcon square"><FontAwesomeIcon icon={faSquare}/></span>
+                            {'\u00A0'} Change Background
                         </a>
                     </li>
                     <li>
                         <a href="/">
-                            Search Cards
+                            <span className="sidebarIcon iconsColor"><FontAwesomeIcon icon={faSearch}/></span>
+                            {'\u00A0'} Search Cards
                         </a>
                     </li>
                     <li>
                         <a href="/">
-                            Stickers
+                            <span className="sidebarIcon iconsColor"><FontAwesomeIcon icon={faStickyNote}/></span>
+                            {'\u00A0'} Stickers
                         </a>
                     </li>
                     <li>
                         <a href="/">
-                            More
+                            <span className="sidebarIcon iconsColor"><FontAwesomeIcon icon={faEllipsisH}/></span>
+                            {'\u00A0'}  More
                         </a>
                     </li>
                     <hr></hr>
                     <li>
-                        <a href="/"> Butler
+                        <a href="/"> 
+                        <span className="sidebarIcon iconsColor"><FontAwesomeIcon icon={faRobot}/></span>
+                            {'\u00A0'} Butler
                         </a>
                     </li>
                 </ul>
@@ -53,20 +65,24 @@ function Sidebar(props) {
                 <ul>
                     <li>
                         <a href="/">
-                            Power-Ups
+                            <span className="sidebarIcon"><FontAwesomeIcon icon={faRocket}/></span>
+                            {'\u00A0'}  Power-Ups
                             <br></br>
-                            <span className="itemSubtext">
-                                Google Drive and more...
-                            </span>
-                        </a >
-                    </li>
-                    <li>
-                        <a  href="/">
-                            Add Power Up...
+                            <div className="itemSubtext">
+                            {'\u00A0'} Google Drive and more...
+                            </div>
                         </a>
                     </li>
                     <li>
-                        <a className= "sidebarBoxContent" href="/">
+                        <a  href="/">
+                            <span className="sidebarIcon iconsColor"><FontAwesomeIcon icon={faPlusSquare}/></span>
+                            {'\u00A0'} Add Power-Up...
+                        </a>
+                    </li>
+                    <li>
+                    <a href="/">
+                        <span className="sidebarIcon"><FontAwesomeIcon icon={faLock}/></span>
+                        <div className= "sidebarBoxContent" href="/">
                             Get Unlimited Power-Ups
                             <br></br>
                             <br></br>
@@ -78,6 +94,7 @@ function Sidebar(props) {
                             <span className="itemSubtext">
                             <u>Try for 14 days</u>
                             </span>
+                        </div>
                         </a>
                     </li>
                 </ul>
@@ -85,7 +102,8 @@ function Sidebar(props) {
                 <ul>
                     <li>
                         <a href="/">
-                           Activity
+                           <span className="sidebarIcon iconsColor"><FontAwesomeIcon icon={faListUl}/></span>
+                            {'\u00A0'} Activity
                         </a >
                     </li>
                 </ul>
