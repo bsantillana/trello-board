@@ -1,2 +1,2 @@
 # trello-board-react
- Building a clone of Trello
+ This is a clone of the popular Kanban-style application Trello created using React
