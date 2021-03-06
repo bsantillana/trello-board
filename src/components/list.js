@@ -48,6 +48,7 @@ class List extends React.Component  {
         this.setState(state => {
             const cardList = state.cardList.filter(card => card.cardID !== cardID);
             // loop through card list, reset cardID to iterator index
+            cardList.forEach((card, index) => card.cardID = index + 1);
             return {
                 cardList
             };

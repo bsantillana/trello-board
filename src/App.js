@@ -1,6 +1,6 @@
 import './App.css';
-import List from './components/List'
 import Board from './components/Board'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

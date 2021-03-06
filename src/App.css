@@ -34,13 +34,40 @@
 }
 .header {
   background-color: rgba(0,0,0,.15);
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   display: flex;
   max-height: 40px;
   overflow-y: hidden;
   padding: 4px;
+  justify-content:center;
+  width: 100%;
+}
+.headerColLeft {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+.headerColRight {
+  display: flex;
+  justify-content: flex-end;
+}
+.col-4 {
+  padding: 0!important;
+
+}
+.profile {
+  border-radius: 100%!important;
+}
+.subHeader {
+  background-color:transparent;
+  box-sizing: border-box;
+  display: flex;
+  /* max-height: fit-content; */
+  overflow-y: hidden;
+  padding: 4px;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
 .header a {
   display: block;
@@ -54,6 +81,27 @@
 .header img {
   height: 30px;
 }
+.headerButton {
+  background-color: hsla(0,0%,100%,.24);
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+  padding: 6px 8px;
+  vertical-align: middle;
+  color: white;
+  border: none;
+  font-size: 14px;
+  height: 32px;
+  /* line-height: 32px; */
+  max-width: 400px;
+  float: right;
+  margin: 0 4px 4px 0;
+
+}
 .board {
   background-color: #0079be;
   padding: 0 ;
@@ -62,8 +110,8 @@
   left: 0;
   bottom: 0;
   right: 0;
-  overflow: scroll;
-  width: 100%;
+  overflow: hidden;
+  max-width: 100%;
 }
 .contentContainer {
   padding: 8px 4px 4px 8px;
@@ -75,8 +123,14 @@
     overflow-y: hidden;
     padding-bottom: 8px;
     position: absolute;
-    overflow-x: hidden;
-    width: max-content;
+    top: 85px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: scroll;
+    width: 100%;
+    text-align: left;
+    padding-right: 361px;
 }
 
 .list {
@@ -267,6 +321,98 @@
 	cursor: pointer;
 	outline: inherit;
   float: right;
+}
+.sidebarContainer {
+  box-shadow: 0 12px 24px -6px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%);
+  transform: translateX(0);
+  bottom: 0;
+  position: absolute;
+  right: 335px;
+  height: 100%;
+  top: -4px;
+  transition-property: transform,width;
+  transition-duration: .1s;
+  transition-timing-function: ease-in;
+  transform: translateX(339px);
+  width: 339px;
+  z-index: 5;
+  background-color: #f4f5f7;
+}
+.sidebarHeader {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  height: 48px;
+  padding: 0 6px 0 12px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.exitSidebar {
+  float:right;
+  border: none;
+  background-color: transparent;
+
+}
+.sidebarHeader h3 {
+  line-height: 20px;
+  margin: 14px 5px 14px 32px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  transition: margin .12s ease-in;
+  white-space: nowrap;
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+}
+.sidebarHeader hr {
+  background-color: rgba(9,30,66,.13);
+  border: 0;
+  height: 1px;
+  margin: 16px 0;
+  padding: 0;
+  width: 100%;
+}
+.sidebarContent {
+  text-align: left;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 12px 6px 12px 12px;
+  width: 100%;
+  height: 100%;
+  margin: 4px 0;
+}
+.sidebarContent ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebarContent a {
+  border-radius: 3px;
+  display: block;
+  font-weight: 600;
+  line-height: 20px;
+  color: #172b4d;
+  padding: 6px 6px 6px 40px;
+  position: relative;
+}
+.sidebarBoxContent {
+    margin-left: 35px;
+    padding: 10px!important;
+    box-shadow: 0 1px 1px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%);
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.sidebarContent a:hover {
+  background-color: rgba(9,30,66,.08);
+  text-decoration: none;
+  color: #172b4d;
+}
+.itemSubtext {
+  color: #5e6c84;
+  font-weight: 400;
 }
 @keyframes App-logo-spin {
   from {

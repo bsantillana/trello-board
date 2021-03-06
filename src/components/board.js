@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { Draggable } from 'react-beautiful-dnd'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import List from './List';
-import trelloLogo from '../trello-logo-blue.svg'
-import data from '../static-data/data.json'
+import Header from './Header'
+import Sidebar from './Sidebar';
 
 
 class Board extends React.Component  {
@@ -12,7 +11,8 @@ class Board extends React.Component  {
         this.state = {
             listArray: [],
             showListForm: false,
-            showAddList: true 
+            showAddList: true,
+            isSidebarVisible: false
         };
         this.addList = this.addList.bind(this);
         this.removeList = this.removeList.bind(this);
@@ -54,14 +54,11 @@ class Board extends React.Component  {
         
         return (
         <div className="board"> 
-        <div className="header">
-            <a href="/"><img src={trelloLogo}></img></a>
-            
-        </div>
+
+        <Header />
+
         <div className="contentContainer">
-            {/* <List listId="toDo" listTitle="To Do" />
-            <List listId="inProg" listTitle="In Progress" />
-            <List listId="done" listTitle="Done" /> */}
+          
             {
                 this.state.listArray.map(list => (
                     <List key={list.listID} listID={list.listID} listTitle={list.listTitle} removeList={this.removeList} />
